@@ -10,10 +10,13 @@ import com.maximize.contactForm.dto.MessageDTO;
 import com.maximize.contactForm.entities.Message;
 import com.maximize.contactForm.repositories.MessageRepository;
 
+
 @Service
 public class MessageService {
 	@Autowired
 	private MessageRepository repository;
+	
+	
 	
 	@Transactional(readOnly = true)
 	public Page<MessageDTO> findAll(Pageable pageable) {
@@ -28,4 +31,6 @@ public class MessageService {
 		MessageDTO dto = new MessageDTO(result);
 		return dto;
 	}
+
+	
 }

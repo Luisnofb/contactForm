@@ -12,7 +12,7 @@ import com.maximize.contactForm.dto.MessageDTO;
 import com.maximize.contactForm.services.MessageService;
 
 @RestController
-@RequestMapping(value = "/messages")
+@RequestMapping(value = "/message")
 public class MessageController {
 	
 	@Autowired
@@ -27,4 +27,5 @@ public class MessageController {
 	public MessageDTO findById(@PathVariable Long id){
 		return service.findById(id);
 	}
+	
 }

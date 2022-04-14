@@ -57,8 +57,13 @@ public class Message implements Serializable {
 		return user;
 	}
 	
+	//used in MessageDTO
 	public Long getUserID() {
 		return user.getId();
+	}
+	//used in MessageService
+	public void setUserID(Long id) {
+		user.setId(id);
 	}
 
 	
