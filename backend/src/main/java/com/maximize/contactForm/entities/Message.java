@@ -56,6 +56,10 @@ public class Message implements Serializable {
 	public User getUser() {
 		return user;
 	}
+	
+	public Long getUserID() {
+		return user.getId();
+	}
 
 	
 }
