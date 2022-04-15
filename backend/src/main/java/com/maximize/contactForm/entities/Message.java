@@ -20,6 +20,7 @@ public class Message implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String msg;
+	private String user_email;
 	
 	//association
 	@ManyToOne
@@ -31,9 +32,10 @@ public class Message implements Serializable {
 		
 	}
 	
-	public Message(Long id, String msg, User user) {
+	public Message(Long id, String msg,String user_email, User user) {
 		this.id = id;
 		this.msg = msg;
+		this.user_email= user_email;
 		this.user = user;
 	}
 
@@ -57,14 +59,24 @@ public class Message implements Serializable {
 		return user;
 	}
 	
-	//used in MessageDTO
-	public Long getUserID() {
+	public void setUser(User user) {
+		this.user = user;
+	}
+	
+	public void setUserId(Long id) {
+		this.user.setId(id);
+	}
+	
+	public Long getUserId() {
 		return user.getId();
 	}
-	//used in MessageService
-	public void setUserID(Long id) {
-		user.setId(id);
+
+	public String getUser_email() {
+		return user_email;
 	}
 
+	public void setUser_email(String user_email) {
+		this.user_email = user_email;
+	}
 	
 }

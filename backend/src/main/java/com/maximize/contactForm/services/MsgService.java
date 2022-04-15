@@ -20,12 +20,12 @@ public class MsgService {
 	public MessageDTO saveMessage(MessageDTO dto) {
 		Message message = repository.findByMsg(dto.getMsg());
 		if (message == null) {
-			return new MessageDTO(message);
+			message = new Message();
+			message.setMsg(dto.getMsg());
+			message.setUser_email(dto.getUser_email());
+			message = repository.save(message);	
 		}
-		message = new Message();
-		message.setMsg(dto.getMsg());
-		message.setUserID(dto.getUser_id());
-		message = repository.save(message);	
+		
 		return new MessageDTO(message);
 	}
 }

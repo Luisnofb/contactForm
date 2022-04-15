@@ -2,23 +2,24 @@ package com.maximize.contactForm.dto;
 
 import com.maximize.contactForm.entities.Message;
 
+
 public class MessageDTO {
 	private String msg;
-	private Long user_id;
+	private String user_email;
 	
 	
 	public MessageDTO(){
 		
 	}
 
-	public MessageDTO(String msg, Long user_id) {
+	public MessageDTO(String msg, String user_email) {
 		this.msg = msg;
-		this.user_id = user_id;
+		this.user_email = user_email;
 	}
 	
 	public MessageDTO(Message message) {
 		msg = message.getMsg();
-		user_id = message.getUserID();
+		user_email = message.getUser_email();
 	}
 
 
@@ -30,12 +31,13 @@ public class MessageDTO {
 		this.msg = msg;
 	}
 
-	public Long getUser_id() {
-		return user_id;
+	public String getUser_email() {
+		return user_email;
 	}
 
-	public void setUser_id(Long user_id) {
-		this.user_id = user_id;
+	public void setUser_id(String user_email) {
+		this.user_email = user_email;
 	}
+
 	
 }
