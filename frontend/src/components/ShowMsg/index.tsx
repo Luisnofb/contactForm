@@ -1,11 +1,11 @@
+import { Message } from "types/message";
 import "./styles.css";
 
-function ShowMsg() {
-  const message = {
-    msg: "Only the worth will survive!",
-    user_email: "luis@gmail.com",
-  };
+type Props = {
+  message: Message;
+}
 
+function ShowMsg({ message } : Props) {
   return (
     <>
       <div>

@@ -8,34 +8,33 @@ import "./styles.css";
 function ListMsg() {
   const [pageNumber, setPageNumber] = useState(0);
 
+  const [page, setPage] = useState<MessagePage>({
+    content: [],
+    last: true,
+    totalPages: 0,
+    totalElements: 0,
+    size: 12,
+    number: 0,
+    first: true,
+    numberOfElements: 0,
+    empty: true,
+  });
+
   useEffect(() => {
-    axios.get(`${BASE_URL}/message?page=0`)
-    .then(response => {
+    axios.get(`${BASE_URL}/message?page=${pageNumber}&sort=msg`).then((response) => {
       const data = response.data as MessagePage;
-      console.log(data);
-      setPageNumber(data.number);
+      setPage(data);
     });
-  }, []);
+  }, [pageNumber]);
 
   return (
     <div className="container">
-      <p>{pageNumber}</p>
       <div className="row">
-        <div className="col-sm-12 col-6 mb-3">
-          <ShowMsg />
-        </div>
-        <div className="col-sm-12 col-6 mb-3">
-          <ShowMsg />
-        </div>
-        <div className="col-sm-12 col-6 mb-3">
-          <ShowMsg />
-        </div>
-        <div className="col-sm-12 col-6 mb-3">
-          <ShowMsg />
-        </div>
-        <div className="col-sm-12 col-6 mb-3">
-          <ShowMsg />
-        </div>
+        {page.content.map(message => (
+          <div key={message.msg} className="col-sm-12 col-6 mb-3">
+            <ShowMsg message={message} />
+          </div>
+        ))}
       </div>
     </div>
   );

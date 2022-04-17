@@ -3,9 +3,9 @@ export type Message = {
     user_email: string;
 }
 
-export type MessagePage ={
+export type MessagePage = {
     content: Message[];
-    lat: boolean;
+    last: boolean;
     totalPages: number;
     totalElements: number;
     size: number;
