@@ -1,9 +1,10 @@
 import { ReactComponent as Mico } from "assets/img/icon-email.svg";
 import { ReactComponent as Tico } from "assets/img/icon-telefone.svg";
 import { ReactComponent as CtcFt } from "assets/img/contato-outline.svg";
+import { ReactComponent as Eico } from "assets/img/icon-enviar.svg";
 import "./styles.css";
 
-function Contactmain() {
+function ContactMain() {
   return (
     //body first, design hasn't navigation bar
     <body>
@@ -73,7 +74,7 @@ function Contactmain() {
               </div>
               <div className="form-btn-container">
                 <button type="submit" className="btn btn-primary ctbtn">
-                  Enviar
+                  Enviar           <Eico />
                 </button>
               </div>
             </form>
@@ -89,4 +90,4 @@ function Contactmain() {
   );
 }
 
-export default Contactmain;
+export default ContactMain;

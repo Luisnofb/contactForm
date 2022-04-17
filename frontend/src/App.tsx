@@ -1,11 +1,11 @@
 import ShowMsg from "components/ShowMsg";
 import Pag from "components/Pag";
-import Contactmain from "./components/ContactMain";
+import Contactmain from "components/ContactMain";
 
 function App() {
   return (
-    /*<Contactmain />*/
     <>
+      <Contactmain />
       <Pag />
       <div className="container">
         <div className="row">
