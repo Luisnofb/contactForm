@@ -3,6 +3,7 @@ import ShowMsg from "components/ShowMsg";
 import { useEffect, useState } from "react";
 import { MessagePage } from "types/message";
 import { BASE_URL } from "utils/requests";
+import Pag from "components/Pag";
 import "./styles.css";
 
 function ListMsg() {
@@ -21,22 +22,33 @@ function ListMsg() {
   });
 
   useEffect(() => {
-    axios.get(`${BASE_URL}/message?page=${pageNumber}&sort=msg`).then((response) => {
-      const data = response.data as MessagePage;
-      setPage(data);
-    });
+    axios
+      .get(`${BASE_URL}/message?size=3&page=${pageNumber}&sort=msg`)
+      .then((response) => {
+        const data = response.data as MessagePage;
+        setPage(data);
+      });
   }, [pageNumber]);
 
+
+  const handlePageChange =(newPageNumber : number) =>{
+      setPageNumber(newPageNumber);
+  }
+
   return (
-    <div className="container">
-      <div className="row">
-        {page.content.map(message => (
-          <div key={message.msg} className="col-sm-12 col-6 mb-3">
-            <ShowMsg message={message} />
-          </div>
-        ))}
+    <>
+      <Pag page={page} onChange={handlePageChange}/>
+      
+      <div className="container">
+        <div className="row">
+          {page.content.map((message) => (
+            <div key={message.msg} className="col-sm-12 col-6 mb-3">
+              <ShowMsg message={message} />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

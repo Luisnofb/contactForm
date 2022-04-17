@@ -20,7 +20,7 @@
 .pagination-button {
     width: 40px;
     height: 40px;
-    border-radius: 4px;
+    border-radius: 50%;
     background-color: #fff;
     display: flex;
     justify-content: center;
@@ -30,7 +30,7 @@
 }
 
 .pagination-button svg {
-    filter: brightness(0) saturate(100%) invert(26%) sepia(19%) saturate(7395%) hue-rotate(234deg) brightness(89%) contrast(92%);
+    filter: none;
 }
 
 .pagination-button:disabled {
@@ -39,8 +39,9 @@
 }
 
 .pagination-button:disabled svg {
-    filter: none;
+    filter: brightness(0) saturate(100%) invert(70%) sepia(50%) ;
 }
+
 
 .pagination-container p {
     margin: 0;
