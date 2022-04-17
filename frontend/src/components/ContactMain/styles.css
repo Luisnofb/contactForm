@@ -1,6 +1,48 @@
-.CF-ContactMain-body {
+
+.four{
+    display: flex;
+    align-items:flex-start
+}
+
+.thay-name h3{
+    font-weight: bold;
+    font-size: 14px;
+}
+contactMain-body{
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     color: black;
+    border: solid red 1px;
+    padding: 0 auto;
+}
+
+.magicImg{
+    margin-left: 30PX;
+    padding: 0;
+    max-width: 380px;
+}
+.contactSources {
+    margin-top: 20px;
+    margin-left: 30px;
+    border-left: solid #eb9596 1px;
+    max-width: 380px;
+}
+.contactSources h4 {
+    font-size: 24px;
+    margin: 0 0 10px 20px;
+    
+}
+
+.sources {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.sources p {
+    display: flex;
+    font-weight: bold;
+    font-size: 12px;
+    align-items: flex-end;
+    margin: 0 0 0 20px;
 }

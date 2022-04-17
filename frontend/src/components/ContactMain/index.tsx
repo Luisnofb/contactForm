@@ -8,23 +8,30 @@ function Contactmain() {
     //body first, design hasn't navigation bar
     <body>
       {/* bootstrap class*/}
-      <div>
-        <div className="CF-ContactMain-body">
-          <a href="http://thaynaraog.homolog.mx/" target="_blanck">
-            <h3>Thaynara og</h3>
-          </a>
+      <div className="four">
+        <div className="thay-name">
+            <a href="http://thaynaraog.homolog.mx/" target="_blanck">
+                <h3>Thaynara og</h3>
+            </a>
+        </div>
+        <div className="contactMain-body">
           <div className="magicImg">
             <CtcFt />
             <img src="../../assets/img/contato-foto.jpg" alt="thay" />
           </div>
-          <div>
+          <div className="contactSources">
             <h4>Contato Proficional</h4>
-            <p>
-              <Tico /> Contato@thaynaraog.com.br
-              <Mico /> Contato@thaynaraog.com.br
-            </p>
+            <div className="sources">
+                <p><Tico /> 98 991234-5678</p>
+                <p> <Mico /> Contato@thaynaraog.com.br</p>
+            </div>
           </div>
         </div>
+        <div className="contact-form">
+        </div>
+        <aside className="links">
+
+        </aside>
       </div>
     </body>
   );
