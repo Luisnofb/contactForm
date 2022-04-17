@@ -7,7 +7,7 @@ import "./styles.css";
 function ContactMain() {
   return (
     //body first, design hasn't navigation bar
-    <body>
+    <>
       {/* bootstrap class*/}
       <div className="four">
         {/*-1-*/}
@@ -86,7 +86,7 @@ function ContactMain() {
           <h1>Oi MUNDO</h1>
         </div>
       </div>
-    </body>
+    </>
   );
 }
 
