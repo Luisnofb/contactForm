@@ -1,14 +1,15 @@
-
-.four{
+.four {
     display: flex;
-    align-items:flex-start
+    align-items: flex-start;
+    height: 580px;
 }
 
-.thay-name h3{
+.thay-name h3 {
     font-weight: bold;
     font-size: 14px;
 }
-contactMain-body{
+
+contactMain-body {
     display: flex;
     flex-direction: column;
     color: black;
@@ -16,21 +17,23 @@ contactMain-body{
     padding: 0 auto;
 }
 
-.magicImg{
+.magicImg {
     margin-left: 30PX;
     padding: 0;
     max-width: 380px;
 }
+
 .contactSources {
     margin-top: 20px;
     margin-left: 30px;
     border-left: solid #eb9596 1px;
     max-width: 380px;
 }
+
 .contactSources h4 {
     font-size: 24px;
     margin: 0 0 10px 20px;
-    
+
 }
 
 .sources {
@@ -46,3 +49,65 @@ contactMain-body{
     align-items: flex-end;
     margin: 0 0 0 20px;
 }
+
+
+/* ---------------- */
+
+
+.form-container {
+    margin: 10px auto;
+    padding-top: 50px;
+}
+
+.ctform {
+    width: calc(100% - 20px);
+}
+
+.form-group {
+    display: flex;
+    border-bottom: solid #4A4A4A 1px;
+}
+
+.form-group label {
+    font-size: 12px;
+}
+
+.form-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.movie-card-image {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+}
+
+.card-bottom-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 10px 10px;
+    border-radius: 0 0 8px 8px;
+}
+
+.card-bottom-container h3 {
+    color: #4A4A4A;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    min-height: 40px;
+}
+
+.ctbtn {
+    background-color: #fc8484;
+    font-size: 14px;
+    font-weight: 700;
+    height: 40px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ---------------- */
