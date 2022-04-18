@@ -8,9 +8,10 @@
 .thay-name{
     margin: 40px 50px 0 30px;
 }
+
 .thay-name h3 {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
     color: #eb9596;  
 }
@@ -27,14 +28,36 @@
     font-size: 12px;
 }
 
-.magicImg {
-    margin-left: 30PX;
+.magicImg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-size: cover;
+    width: 400px;
+}
+
+.magicImg img {
+    margin-left: 10px;
+    position: absolute;
     padding: 0;
-    max-width: 380px;
+    width: 200px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.magicImg svg {
+    margin-left: 10px;
+    position: relative;
+    padding: 0;
+    width: 450px;
+    height: 300px;
+    margin-left: 50px;
 }
 
 .contactSources {
-    margin-top: 20px;
+
+    margin-top: 120px;
     margin-left: 30px;
     border-left: solid #eb9596 1px;
     max-width: 700px;
@@ -50,19 +73,19 @@
 
 .sources {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     margin: 0; 
+    width: 100px;
+    justify-content: space-between;
 }
 
 .sources p {
     display: flex;
-    font-weight: bold;
+    font-weight: 300;
     font-size: 12px;
     align-items: flex-end;
-    margin: 0 30px 0 20px;
-    max-width: 300px;
+    margin-left: 15px;
 }
-
 
 /* ---------------- */
 
@@ -83,8 +106,16 @@
 
 
 
-label {
+.label {
     font-size: 12px;
+}
+
+.footer{
+    width: 100%;
+}
+
+.caret{
+    background-image: #FFF;
 }
 
 .form-btn-container {
@@ -137,7 +168,6 @@ textarea{
 }
 
 
-
 .card-bottom-container h3 {
     color: #4A4A4A;
     text-align: center;
@@ -183,9 +213,12 @@ textarea{
     margin-top: 20px;
     margin-right: 20px;
 }
-.social-icos svg{
-    fill: #fc8484;
-    color: #eb9596;
+
+.social-icos {
+    display: flex;
+}
+.social-icos a{
+    margin-right: 4px;
 }
 
 .util-links{
@@ -214,8 +247,7 @@ footer{
     background-color: #040404;
     display: flex;
     justify-content:space-around;
-    align-items: center;
-       
+    align-items: center;   
 }
 
 .footer-title{

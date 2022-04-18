@@ -5,6 +5,8 @@ import { ReactComponent as Fico } from "assets/img/icon-facebook.svg";
 import { ReactComponent as Sico } from "assets/img/icon-snapchat.svg";
 import { ReactComponent as Tkico } from "assets/img/icon-tiktok.svg";
 
+import Logo from "assets/img/contato-foto.jpg";
+
 import { ReactComponent as Mico } from "assets/img/icon-email.svg";
 import { ReactComponent as Tico } from "assets/img/icon-telefone.svg";
 import { ReactComponent as CtcFt } from "assets/img/contato-outline.svg";
@@ -71,10 +73,12 @@ function ContactMain() {
 
         {/*-2-*/}
         <div className="contactMain-body">
+
           <div className="magicImg">
+            <img src={Logo} alt="thay" />
             <CtcFt />
-            <img src="src\assets\img\contato.jpg" alt="thay" />
           </div>
+
           <div className="contactSources">
             <h4>Contato Profissional</h4>
             <div className="sources">
@@ -110,7 +114,7 @@ function ContactMain() {
                 <input type="text" id="company" />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email </label>
+                <label htmlFor="email">E-mail </label>
                 <input type="email" id="email" />
               </div>
               <div className="form-group">
@@ -166,11 +170,14 @@ function ContactMain() {
 
       <footer id="foot">
         <div className="footer-title">follow me</div>
-        <div className="social-container">
-          <a href="https://github.com/Luisnofb" target="_blank">
-            <Eico />
-          </a>
-        </div>
+        <div className="social-icos">
+            <a href="#"><Iico /></a>
+            <a href="#"><Yico /></a>
+            <a href="#"><Twico /></a>
+            <a href="#"><Fico /></a>
+            <a href="#"><Sico /></a>
+            <a href="#"><Tkico /></a>
+          </div>
       </footer>
     </>
   );
