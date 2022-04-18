@@ -23,7 +23,7 @@ function ListMsg() {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/message?size=3&page=${pageNumber}&sort=msg`)
+      .get(`${BASE_URL}/message?size=3&page=${pageNumber}&sort=id`)
       .then((response) => {
         const data = response.data as MessagePage;
         setPage(data);
