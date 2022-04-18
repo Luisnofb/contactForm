@@ -1,12 +1,18 @@
+
 .four {
     display: flex;
     align-items: flex-start;
-    height: 580px;
+    height: 622px;
 }
 
+.thay-name{
+    margin: 40px 50px 0 30px;
+}
 .thay-name h3 {
     font-weight: bold;
     font-size: 14px;
+    text-transform: uppercase;
+    color: #eb9596;  
 }
 
 .contactMain-body {
@@ -14,6 +20,11 @@
     flex-direction: column;
     color: black;
     padding: 0 auto;
+    margin-right: 100px;
+}
+
+.form-select {
+    font-size: 12px;
 }
 
 .magicImg {
@@ -26,19 +37,21 @@
     margin-top: 20px;
     margin-left: 30px;
     border-left: solid #eb9596 1px;
-    max-width: 380px;
+    max-width: 700px;
 }
 
 .contactSources h4 {
     font-size: 24px;
     margin: 0 0 10px 20px;
+    text-transform: uppercase;
+    font-weight: 200;
 
 }
 
 .sources {
     display: flex;
     align-items: center;
-    margin: 0;
+    margin: 0; 
 }
 
 .sources p {
@@ -46,7 +59,8 @@
     font-weight: bold;
     font-size: 12px;
     align-items: flex-end;
-    margin: 0 0 0 20px;
+    margin: 0 30px 0 20px;
+    max-width: 300px;
 }
 
 
@@ -54,20 +68,22 @@
 
 
 .form-container {
-    margin: 10px auto;
+    margin: 10px 80px;
     padding-top: 50px;
 }
+
 
 .ctform {
     width: calc(100% - 20px);
 }
 
 .form-group {
-    display: flex;
-    border-bottom: solid #4A4A4A 1px;
+    border-bottom: solid #c2c2c2 1px;
 }
 
-.form-group label {
+
+
+label {
     font-size: 12px;
 }
 
@@ -86,16 +102,54 @@
     flex-direction: column;
     align-items: center;
     padding: 10px 10px 10px 10px;
-    border-radius: 0 0 8px 8px;
+    border-radius: 8px 8px;
 }
+
+.form-check-container{
+    display: flex;
+    border-radius: 4px 4px;
+    align-items: center;
+    background-color: #f3f3f3;
+    font-size: 14px;
+    height: 40px;
+    width: 180px;
+}
+.form-check-container input[type=checkbox] {
+    margin-right: 10px;
+    transform: scale(1.5);
+}
+
+input {
+    border: none;
+    background: transparent;
+    margin-top: 10px;
+    border: 0;
+    outline: none;
+}
+
+
+label{
+    margin-right: 5px;
+}
+
+textarea{
+    resize: none;
+}
+
+
 
 .card-bottom-container h3 {
     color: #4A4A4A;
+    text-align: center;
     text-align: center;
     font-size: 14px;
     font-weight: 700;
     margin-bottom: 10px;
     min-height: 40px;
+}
+.btn-size{
+    max-width: 100px;
+    margin-left: 50px;
 }
 
 .ctbtn {
@@ -111,5 +165,68 @@
     border: 0;
     justify-content: space-between;
 }
+.btn-box-asjust{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* ---------------- */
+
+
+/* --------------------*/
+.c-links{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+.social-icos svg{
+    fill: #fc8484;
+    color: #eb9596;
+}
+
+.util-links{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 20px;
+}
+
+.util-links p{
+   margin: 0;
+   padding: 0;
+   border: 0;
+}
+.l-line {
+    width: 20px;
+    height: 1px;
+    background-color: #fc8484;
+    margin: 6px 0;
+  }
+/* --------------------*/
+
+
+footer{
+    height: 40px;
+    background-color: #040404;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+       
+}
+
+.footer-title{
+    color: #FFF;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.social-container svg{
+    width: 32px;
+    margin-top: 5px;
+}
+
+

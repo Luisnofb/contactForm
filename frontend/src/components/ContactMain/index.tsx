@@ -1,3 +1,10 @@
+import { ReactComponent as Iico } from "assets/img/icon-instagram.svg";
+import { ReactComponent as Yico } from "assets/img/icon-youtube.svg";
+import { ReactComponent as Twico } from "assets/img/icon-twitter.svg";
+import { ReactComponent as Fico } from "assets/img/icon-facebook.svg";
+import { ReactComponent as Sico } from "assets/img/icon-snapchat.svg";
+import { ReactComponent as Tkico } from "assets/img/icon-tiktok.svg";
+
 import { ReactComponent as Mico } from "assets/img/icon-email.svg";
 import { ReactComponent as Tico } from "assets/img/icon-telefone.svg";
 import { ReactComponent as CtcFt } from "assets/img/contato-outline.svg";
@@ -6,6 +13,10 @@ import { validateEmail } from "utils/validate";
 import axios, { AxiosRequestConfig } from "axios";
 import { BASE_URL } from "utils/requests";
 import "./styles.css";
+
+interface IconProps{
+  flag: 'up' | 'down',
+}
 
 function ContactMain() {
   const handleSubimt = (event: React.FormEvent<HTMLFormElement>) => {
@@ -25,7 +36,7 @@ function ContactMain() {
       url: "/puts",
       data: {
         msg: msg,
-        user_email: email,  
+        user_email: email,
       },
     };
 
@@ -37,18 +48,13 @@ function ContactMain() {
         // name company email telephone msg
         name: name,
         company: company,
-        email: email,  
+        email: email,
         telephone: telephone,
-
       },
     };
     //submit in DataBase
-    axios(configMsg).then(resp => {
-     
-    });
-    axios(configUser).then(resp => {
-     
-    });
+    axios(configMsg).then((resp) => {});
+    axios(configUser).then((resp) => {});
   };
 
   return (
@@ -70,13 +76,12 @@ function ContactMain() {
             <img src="src\assets\img\contato.jpg" alt="thay" />
           </div>
           <div className="contactSources">
-            <h4>Contato Proficional</h4>
+            <h4>Contato Profissional</h4>
             <div className="sources">
               <p>
                 <Tico /> 98 991234-5678
               </p>
               <p>
-                {" "}
                 <Mico /> Contato@thaynaraog.com.br
               </p>
             </div>
@@ -85,18 +90,17 @@ function ContactMain() {
 
         {/*-3-*/}
         <div className="form-container">
-          <div className="card-bottom-container">
-            <form className="ctform" onSubmit={handleSubimt}>
-              <div className="form-group ">
+          <div>
+            <form onSubmit={handleSubimt}>
+              <div>
                 <label htmlFor="relat">Seu contato é relacionado a:</label>
-                <br />
 
-                <select name="relat" id="relat">
-                  <option value="cpy">Empresa</option>
+                <select className="form-select" name="relat" id="relat">
+                  <option value="cpy">Imprensa</option>
                   <option value="Event">Evento</option>
                   <option value="msg">Mensagem</option>
                 </select>
-              </div>
+              </div><br />
               <div className="form-group">
                 <label htmlFor="name">Nome </label>
                 <input type="text" id="name" />
@@ -112,26 +116,62 @@ function ContactMain() {
               <div className="form-group">
                 <label htmlFor="telephone">Telefone </label>
                 <input type="tel" id="telephone" />
-              </div>
+              </div><br />
               <div>
-                <label>Mensagem</label>
+                <label htmlFor="msg">Mensagem</label>
                 <br />
-                <textarea name="message" id="msg"></textarea>
+                <textarea className="form-control" name="message" id="msg" rows={3}></textarea>
               </div>
-              <div className="form-btn-container">
-                <button type="submit" className="btn btn-primary ctbtn">
-                  Enviar <Eico />
-                </button>
+              <div className="btn-box-asjust">
+                <div className="form-check form-check-container" >
+                    <input  type="checkbox" value="" id="flexCheckDefault" />
+                    <label className="form-check-label" htmlFor="flexCheckDefault"> Não sou um robô  </label>
+                </div>
+                <div className="form-btn-container btn-size">
+                  <button type="submit" className="btn btn-primary ctbtn">
+                    Enviar <Eico />
+                  </button>
+                </div>
               </div>
             </form>
           </div>
         </div>
 
         {/*-4-*/}
-        <div className="links">
-          <h1>Oi MUNDO</h1>
+        <div className=" container c-links">
+          <div className="social-icos">
+            <a href="#"><Iico /></a>
+            <a href="#"><Yico /></a>
+            <a href="#"><Twico /></a>
+            <a href="#"><Fico /></a>
+            <a href="#"><Sico /></a>
+            <a href="#"><Tkico /></a>
+          </div>
+          <div className="util-links">
+            <a href="#"><p>Sobre</p></a>
+            <a href="#"><p>Novidades</p></a>
+            <a href="#"><p>agenda</p></a>
+            <a href="#"><p>Thay e Unicef</p></a>
+            <a href="#"><p>Galeria</p></a>
+            <a href="#"><p>São João da thay</p></a>
+            <a href="#"><p>Contato</p></a>
+            <div className="l-line"></div>
+            <a href="#"><p>Impresa</p></a>
+            <a href="#"><p>Fã- Clubes</p></a>
+
+          </div>
+
         </div>
       </div>
+
+      <footer id="foot">
+        <div className="footer-title">follow me</div>
+        <div className="social-container">
+          <a href="https://github.com/Luisnofb" target="_blank">
+            <Eico />
+          </a>
+        </div>
+      </footer>
     </>
   );
 }
