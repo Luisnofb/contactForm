@@ -10,7 +10,7 @@ function ShowMsg({ message } : Props) {
     <>
       <div>
         <div className="container boxcenter">
-          <h5>{message.user_email}</h5>
+          {/*<h5>{message.user_email}</h5>*/}
           <h3>{message.msg}</h3>
         </div>
       </div>

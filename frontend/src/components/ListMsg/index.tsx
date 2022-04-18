@@ -42,7 +42,7 @@ function ListMsg() {
       <div className="container">
         <div className="row">
           {page.content.map((message) => (
-            <div key={message.msg} className="col-sm-12 col-6 mb-3">
+            <div key={message.msg} className="col-sm-12 mb-3">
               <ShowMsg message={message} />
             </div>
           ))}

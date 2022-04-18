@@ -2,9 +2,55 @@ import { ReactComponent as Mico } from "assets/img/icon-email.svg";
 import { ReactComponent as Tico } from "assets/img/icon-telefone.svg";
 import { ReactComponent as CtcFt } from "assets/img/contato-outline.svg";
 import { ReactComponent as Eico } from "assets/img/icon-enviar.svg";
+import { validateEmail } from "utils/validate";
+import axios, { AxiosRequestConfig } from "axios";
+import { BASE_URL } from "utils/requests";
 import "./styles.css";
 
 function ContactMain() {
+  const handleSubimt = (event: React.FormEvent<HTMLFormElement>) => {
+    //event.preventDefault();
+    const name = (event.target as any).name.value;
+    const company = (event.target as any).company.value;
+    const email = (event.target as any).email.value;
+    const telephone = (event.target as any).telephone.value;
+    const msg = (event.target as any).msg.value;
+
+    if (!validateEmail(email)) {
+      return;
+    }
+    const configMsg: AxiosRequestConfig = {
+      baseURL: BASE_URL,
+      method: "PUT",
+      url: "/puts",
+      data: {
+        msg: msg,
+        user_email: email,  
+      },
+    };
+
+    const configUser: AxiosRequestConfig = {
+      baseURL: BASE_URL,
+      method: "PUT",
+      url: "/save",
+      data: {
+        // name company email telephone msg
+        name: name,
+        company: company,
+        email: email,  
+        telephone: telephone,
+
+      },
+    };
+    //submit in DataBase
+    axios(configMsg).then(resp => {
+     
+    });
+    axios(configUser).then(resp => {
+     
+    });
+  };
+
   return (
     //body first, design hasn't navigation bar
     <>
@@ -40,7 +86,7 @@ function ContactMain() {
         {/*-3-*/}
         <div className="form-container">
           <div className="card-bottom-container">
-            <form className="ctform">
+            <form className="ctform" onSubmit={handleSubimt}>
               <div className="form-group ">
                 <label htmlFor="relat">Seu contato é relacionado a:</label>
                 <br />
@@ -70,11 +116,11 @@ function ContactMain() {
               <div>
                 <label>Mensagem</label>
                 <br />
-                <textarea name="message"></textarea>
+                <textarea name="message" id="msg"></textarea>
               </div>
               <div className="form-btn-container">
                 <button type="submit" className="btn btn-primary ctbtn">
-                  Enviar           <Eico />
+                  Enviar <Eico />
                 </button>
               </div>
             </form>
