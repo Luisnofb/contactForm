@@ -5,7 +5,14 @@ import { ReactComponent as Fico } from "assets/img/icon-facebook.svg";
 import { ReactComponent as Sico } from "assets/img/icon-snapchat.svg";
 import { ReactComponent as Tkico } from "assets/img/icon-tiktok.svg";
 
-import Logo from "assets/img/contato-foto.jpg";
+import { ReactComponent as Iicopk } from "assets/img/icon-instagrampk.svg";
+import { ReactComponent as Yicopk } from "assets/img/icon-youtubepk.svg";
+import { ReactComponent as Twicopk } from "assets/img/icon-twitterpk.svg";
+import { ReactComponent as Ficopk } from "assets/img/icon-facebookpk.svg";
+import { ReactComponent as Sicopk } from "assets/img/icon-snapchatpk.svg";
+import { ReactComponent as Tkicopk } from "assets/img/icon-tiktokpk.svg";
+
+import Img from "assets/img/contato-foto.jpg";
 
 import { ReactComponent as Mico } from "assets/img/icon-email.svg";
 import { ReactComponent as Tico } from "assets/img/icon-telefone.svg";
@@ -16,9 +23,6 @@ import axios, { AxiosRequestConfig } from "axios";
 import { BASE_URL } from "utils/requests";
 import "./styles.css";
 
-interface IconProps{
-  flag: 'up' | 'down',
-}
 
 function ContactMain() {
   const handleSubimt = (event: React.FormEvent<HTMLFormElement>) => {
@@ -47,7 +51,6 @@ function ContactMain() {
       method: "PUT",
       url: "/save",
       data: {
-        // name company email telephone msg
         name: name,
         company: company,
         email: email,
@@ -55,36 +58,41 @@ function ContactMain() {
       },
     };
     //submit in DataBase
-    axios(configMsg).then((resp) => {});
-    axios(configUser).then((resp) => {});
+    axios(configMsg).then((resp) => {
+      //console.log(resp.data);
+    });
+    axios(configUser).then((resp) => {
+      //console.log(resp.data);
+    });
   };
 
   return (
     //body first, design hasn't navigation bar
     <>
       {/* bootstrap class*/}
-      <div className="four">
-        {/*-1-*/}
-        <div className="thay-name">
+      <div className="thay-name">
           <a href="http://thaynaraog.homolog.mx/" target="_blanck">
-            <h3>Thaynara og</h3>
+            <p>Thaynara og</p>
           </a>
         </div>
-
-        {/*-2-*/}
+      <div className="four">
+      
+        {/*-1-*/}
         <div className="contactMain-body">
 
           <div className="magicImg">
-            <img src={Logo} alt="thay" />
+            <img src={Img} alt="thay" />
             <CtcFt />
           </div>
 
           <div className="contactSources">
-            <h4>Contato Profissional</h4>
+            <h6>Contato Profissional</h6>
             <div className="sources">
+             
               <p>
                 <Tico /> 98 991234-5678
               </p>
+             
               <p>
                 <Mico /> Contato@thaynaraog.com.br
               </p>
@@ -92,7 +100,7 @@ function ContactMain() {
           </div>
         </div>
 
-        {/*-3-*/}
+        {/*-2-*/}
         <div className="form-container">
           <div>
             <form onSubmit={handleSubimt}>
@@ -127,13 +135,14 @@ function ContactMain() {
                 <textarea className="form-control" name="message" id="msg" rows={3}></textarea>
               </div>
               <div className="btn-box-asjust">
-                <div className="form-check form-check-container" >
+                <div className="form-check-container" >
                     <input  type="checkbox" value="" id="flexCheckDefault" />
                     <label className="form-check-label" htmlFor="flexCheckDefault"> Não sou um robô  </label>
                 </div>
                 <div className="form-btn-container btn-size">
                   <button type="submit" className="btn btn-primary ctbtn">
-                    Enviar <Eico />
+                    <p>  Enviar </p>
+                    <Eico />
                   </button>
                 </div>
               </div>
@@ -141,43 +150,49 @@ function ContactMain() {
           </div>
         </div>
 
-        {/*-4-*/}
-        <div className=" container c-links">
-          <div className="social-icos">
-            <a href="#"><Iico /></a>
-            <a href="#"><Yico /></a>
-            <a href="#"><Twico /></a>
-            <a href="#"><Fico /></a>
-            <a href="#"><Sico /></a>
-            <a href="#"><Tkico /></a>
+        {/*-3-*/}
+        <div className="aside-elements">
+          <div className="social-icos-p">
+              <a href="#"><Iicopk /></a>
+              <a href="#"><Yicopk /></a>
+              <a href="#"><Twicopk /></a>
+              <a href="#"><Ficopk /></a>
+              <a href="#"><Sicopk /></a>
+              <a href="#"><Tkicopk /></a>
+            </div>
+          <div className="container c-links">
+            <div className="util-links">
+              <a href="#"><p>Sobre</p></a>
+              <a href="#"><p>Novidades</p></a>
+              <a href="#"><p>agenda</p></a>
+              <a href="#"><p>Thay e Unicef</p></a>
+              <a href="#"><p>Galeria</p></a>
+              <a href="#"><p>São João da thay</p></a>
+              <a href="#"><p>Contato</p></a>
+              <div className="l-line"></div>
+              <a href="#"><p>Impresa</p></a>
+              <a href="#"><p>Fã- Clubes</p></a>
+            </div>
           </div>
-          <div className="util-links">
-            <a href="#"><p>Sobre</p></a>
-            <a href="#"><p>Novidades</p></a>
-            <a href="#"><p>agenda</p></a>
-            <a href="#"><p>Thay e Unicef</p></a>
-            <a href="#"><p>Galeria</p></a>
-            <a href="#"><p>São João da thay</p></a>
-            <a href="#"><p>Contato</p></a>
-            <div className="l-line"></div>
-            <a href="#"><p>Impresa</p></a>
-            <a href="#"><p>Fã- Clubes</p></a>
-
-          </div>
-
         </div>
       </div>
 
+      {/*-4-*/}
       <footer id="foot">
-        <div className="footer-title">follow me</div>
-        <div className="social-icos">
-            <a href="#"><Iico /></a>
-            <a href="#"><Yico /></a>
-            <a href="#"><Twico /></a>
-            <a href="#"><Fico /></a>
-            <a href="#"><Sico /></a>
-            <a href="#"><Tkico /></a>
+        <div className="footer-box">
+          <div className="footer-title">
+            <p>2022 &copy; THAYNARA OG. Todos os direitos reservados.</p>
           </div>
+          <div className="social-icos">
+              <a href="#"><Iico /></a>
+              <a href="#"><Yico /></a>
+              <a href="#"><Twico /></a>
+              <a href="#"><Fico /></a>
+              <a href="#"><Sico /></a>
+              <a href="#"><Tkico /></a>
+          </div>
+        </div>
+        
       </footer>
     </>
   );
